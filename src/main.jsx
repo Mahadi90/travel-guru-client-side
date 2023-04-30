@@ -11,6 +11,7 @@ import Register from './components/Register.jsx';
 import "react-datepicker/dist/react-datepicker.css";
 import AuthProvider from './providers/AuthProvider';
 import Details from './components/Details';
+import PrivateRoutes from './routes/PrivateRoutes';
 
 
 
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path:'details',
-        element:<Details/>,
+        element:<PrivateRoutes><Details/></PrivateRoutes>,
         loader: () => fetch('http://localhost:5000/details')
       }
     ]

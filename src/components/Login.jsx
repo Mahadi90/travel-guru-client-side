@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import Header from "./Header";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
 
     const { logIn } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const from = location.state?.from?.pathname || '/'
 
     const handleLogin = e => {
         e.preventDefault()
@@ -22,6 +26,7 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser)
             form.reset()
+            navigate(from, {replace: true})
         })
         .catch(error => {
             console.log(error)
