@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import logo from  '../assets/logo.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Header = () => {
+  const { user } = useContext(AuthContext)
     return (
         <nav >
           <Container className='d-flex justify-content-between align-items-center py-3 bg-dak'>

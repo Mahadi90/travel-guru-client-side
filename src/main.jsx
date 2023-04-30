@@ -9,6 +9,7 @@ import Booking from './components/Booking.jsx';
 import Login from './components/Login.jsx';
 import Register from './components/Register.jsx';
 import "react-datepicker/dist/react-datepicker.css";
+import AuthProvider from './providers/AuthProvider';
 
 
 
@@ -41,6 +42,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <AuthProvider><RouterProvider router={router}/></AuthProvider>
   </React.StrictMode>,
 )
