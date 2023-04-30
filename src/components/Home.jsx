@@ -1,8 +1,7 @@
 import React from "react";
-import bgImg from "../assets/images/rectangle.png";
+import bgImg from "../assets/images/bgg.jpg";
 import Header from "./Header";
 import { useLoaderData } from "react-router-dom";
-import { Container } from "react-bootstrap";
 import HomeCard from "./HomeCard";
 
 const Home = () => {
