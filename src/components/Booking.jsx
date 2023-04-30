@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import bggImg from "../assets/images/bgg.jpg";
 import Header from "./Header";
 import { Button, Form, FormGroup } from "react-bootstrap";
@@ -47,9 +47,9 @@ const Booking = () => {
             <label htmlFor="">To: </label>
             <DatePicker className="w-75 ms-2" selected={startDate} onChange={(date) => setStartDate(date)} />
             </FormGroup>
-            <Button className="w-100" variant="success" type="submit">
+           <Link to='/details'> <Button className="w-100" variant="success" type="submit">
               Start Booking
-            </Button>
+            </Button></Link>
           </Form>
         </div>
       </div>
