@@ -9,7 +9,7 @@ const PrivateRoutes = ({children}) => {
   const location = useLocation()
 
   if(loading){
-    return <div className='text-center mx-auto mt-5'> <Spinner animation="border" variant="primary" />
+    return <div className='text-center mx-auto mt-5'><Spinner animation="border" variant="primary" /><br /><h4 className='text-primary'>Loading..</h4>
     </div>
   }
   

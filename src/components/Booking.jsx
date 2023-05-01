@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import bggImg from "../assets/images/bgg.jpg";
 import Header from "./Header";
-import { Button, Form, FormGroup } from "react-bootstrap";
+import { Button, Form, FormGroup, Spinner } from "react-bootstrap";
 import DatePicker from "react-datepicker";
+import { AuthContext } from "../providers/AuthProvider";
+
+
+
+
 
 const Booking = () => {
+  const {loading} = useContext(AuthContext)
+
+  if(loading){
+    return <div className='text-center mx-auto mt-5'><Spinner animation="border" variant="primary" /><br /><h4 className='text-primary'>Loading..</h4>
+    </div>
+  }
+
     const [startDate, setStartDate] = useState(new Date());
   // const {id} = useParams()
   // console.log(id)
